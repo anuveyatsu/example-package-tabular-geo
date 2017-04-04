@@ -1,0 +1,66 @@
+{
+  "name": "example-package-tabular-geo",
+  "title": "Tabular and GeoJSON data types",
+  "description": "Example DataPackage: datasets with two different types - tabular and GeoJSON",
+  "resources": [
+    {
+      "name": "gdp",
+      "path": "data/gdp_2014.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Country Name",
+            "type": "string"
+          },
+          {
+            "name": "Country Code",
+            "type": "string"
+          },
+          {
+            "name": "Year",
+            "type": "date",
+            "format": "fmt:%Y"
+          },
+          {
+            "name": "Value",
+            "description": "GDP in current USD",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "countries",
+      "path": "data/countries.geojson",
+      "format": "geojson",
+      "mediatype": "application/json",
+      "schema": {
+        "fields": [
+          {
+            "name": "ADMIN",
+            "description": "Common name of the country",
+            "type": "string"
+          },
+          {
+            "name": "ISO_A3",
+            "description": "3 characters code for the country, according to ISO3166 standard",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "views": [
+    {
+      "name": "simple-view-line",
+      "title": "GDP",
+      "resources": ["gdp"],
+      "specType": "simple",
+      "spec": {
+        "type": "bar",
+        "group": "Country Name",
+        "series": ["Value"]
+      }
+    }
+  ]
+}
