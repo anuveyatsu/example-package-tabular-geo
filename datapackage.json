@@ -1,5 +1,5 @@
 {
-  "name": "example-package-tabular-geo",
+  "name": "tabular-geo",
   "title": "Tabular and GeoJSON data types",
   "description": "Example DataPackage: datasets with two different types - tabular and GeoJSON",
   "resources": [
